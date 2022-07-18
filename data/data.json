@@ -1,0 +1,20 @@
+{
+    "pages": [
+        {
+            "title" : "Home",
+            "link": false,
+            "path": "./index.html",
+            "content": "./content/index.txt",
+            "template": false,
+            "index": 1
+        },
+        {
+            "title" : "Programs",
+            "link": false,
+            "path": "./programs.html",
+            "content": "./content/programs.txt",
+            "template": false,
+            "index": 1
+        }
+    ]
+}
