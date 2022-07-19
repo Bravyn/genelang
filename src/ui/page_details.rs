@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Page{
-    pages: Vec<PageDetails>
+    pub pages: Vec<PageDetails>
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -21,11 +21,10 @@ pub fn read_json() -> String {
 }
 
 
-impl PageDetails{
+impl Page{
     pub fn new<'a>(json_str:&'a str) -> Page {
         let page = serde_json::from_str::<Page>(json_str)
         .expect("Error reading json to struct");
-        println!("{:?}", page);
         page   
     }
     pub fn read_json() -> String {
