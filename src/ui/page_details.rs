@@ -13,14 +13,23 @@ pub struct PageDetails{
     pub path: String,
     pub content: String,
     pub template: bool,
-    pub index: i32,
+    pub index: i32
+}
+pub fn read_json() -> String {
+    let json_data = fs::read_to_string("data.json").expect("Error reading Json file :(");
+    json_data
 }
 
 
-/*impl PageDetails{
-    fn new(title: String) -> PageDetails {
-        PageDetails{
-            title
-        }
+impl PageDetails{
+    pub fn new<'a>(json_str:&'a str) -> Page {
+        let page = serde_json::from_str::<Page>(json_str)
+        .expect("Error reading json to struct");
+        println!("{:?}", page);
+        page   
     }
-}*/
+    pub fn read_json() -> String {
+        let json_data = fs::read_to_string("./data/data.json").expect("Error reading Json file :(");
+        json_data
+    }    
+}

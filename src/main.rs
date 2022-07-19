@@ -7,7 +7,6 @@ fn main() {
 }
 
 fn new(){
-    println!("....Welcome to Genelang...");
-    println!("Press C to continue and R to read the docs");
-    let mut response = String::new();
+    let json_data = PageDetails::read_json();
+    PageDetails::new(&json_data);
 }
